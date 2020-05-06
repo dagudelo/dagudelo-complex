@@ -1,0 +1,15 @@
+{
+    "dependencies": {
+        "nodemon" : "2.0.3",
+        "redis" : "^3.0.2",
+        "express" :"4.17.1",
+        "pg":   "7.4.3",
+        "body-parser": "*",
+        "cors"  : "2.8.4"
+
+    },
+    "scripts": {
+        "start": "node index.js",
+        "dev" : "nodemon"
+    }
+}
