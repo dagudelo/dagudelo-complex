@@ -1,4 +1,4 @@
-verision: '3'
+version: '3'
 services:
   postgres:
     image: 'postgres/lastest'
@@ -15,7 +15,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
-    volume:
+    volumes:
       # not copy the node modules
       - /app/node_modules 
       # everything in the server folder will be referenced by the container in /app
@@ -32,7 +32,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./client
-    volume:
+    volumes:
       # not copy the node modules
       - /app/node_modules 
       # everything in the server folder will be referenced by the container in /app
@@ -41,7 +41,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
-    volume:
+    volumes:
       # not copy the node modules
       - /app/node_modules 
       # everything in the server folder will be referenced by the container in /app
