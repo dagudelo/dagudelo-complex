@@ -4,13 +4,6 @@ services:
     image: 'postgres/latest'
   redis:
     image: 'redis/latest'
-  nginx:
-    restart: always
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./nginx
-    ports:
-      - '3050:80' 
   api:
     build:
       dockerfile: Dockerfile.dev
@@ -36,7 +29,14 @@ services:
       # not copy the node modules
       - /app/node_modules 
       # everything in the server folder will be referenced by the container in /app
-      - ./client:/app 
+      - ./client:/app
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80' 
   worker:
     build:
       dockerfile: Dockerfile.dev
