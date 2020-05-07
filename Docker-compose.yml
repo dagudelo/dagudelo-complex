@@ -1,9 +1,9 @@
 version: '3'
 services:
   postgres:
-    image: 'postgres/lastest'
+    image: 'postgres/latest'
   redis:
-    image: 'redis/lastest'
+    image: 'redis/latest'
   nginx:
     restart: always
     build:
