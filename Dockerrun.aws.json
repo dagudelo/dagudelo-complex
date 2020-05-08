@@ -5,13 +5,15 @@
             "name": "client",
             "image": "dagudelo/multi-client",
             "hostname" : "client",
-            "essential" : false
+            "essential" : false,
+            "memory": 128
         },
         {
             "name": "nginx",
             "image": "dagudelo/multi-nginx",
             "hostname" : "nginx",
             "essential" : true,
+            "memory": 128,
             "portMappings": [
                 {
                   "hostPort": 80,
@@ -28,13 +30,15 @@
             "name": "server",
             "image": "dagudelo/multi-server",
             "hostname" : "api",
-            "essential" : false
+            "essential" : false,
+            "memory": 128
         },
         {
-            "name": "server",
+            "name": "worker",
             "image": "ddagudelo/multi-workerr",
             "hostname" : "worker",
-            "essential" : false
+            "essential" : false,
+            "memory": 128
         }
         
     ]
