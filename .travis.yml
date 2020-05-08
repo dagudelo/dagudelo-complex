@@ -17,3 +17,15 @@ after_success:
     - docker push dagudelo/multi-nginx
     - docker push dagudelo/multi-server
     - docker push dagudelo/multi-worker
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: multiDocker-env
+    env: MultidockerEnv-env
+    bucket_name : elasticbeanstalk-us-east-2-581380737030
+    bucket_path : docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secret: $AWS_SECRET_KEY
