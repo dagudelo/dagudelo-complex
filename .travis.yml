@@ -4,10 +4,8 @@ services:
 
 before_install:
     - docker build -t dagudelo/react-test -f ./client/Dockerfile.dev ./client
-
 script:
-    - docker run dagudelo/react-test npm test  -- --coverage
-
+    - docker run -e CI=true dagudelo/react-test npm test  -- --coverage
 after_success:
     - docker build -t dagudelo/multi-client ./client
     - docker build -t dagudelo/multi-nginx ./nginx
