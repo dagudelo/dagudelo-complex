@@ -4,4 +4,4 @@ COPY './package.json' './'
 RUN npm install
 COPY './index.js' './'
 COPY './keys.js' './'
-CMD ["npm","run","dev"]
+CMD ["npm","run","start"]
